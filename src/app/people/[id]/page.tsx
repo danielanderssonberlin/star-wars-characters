@@ -95,7 +95,7 @@ export default async function PersonPage({ params }: PageProps) {
   } catch (error) {
     return (
       <div className="max-w-2xl mx-auto p-12 text-center space-y-6">
-        <h2 className="text-3xl font-bold text-white">I have a bad feeling about this...</h2>
+        <h2 className="text-3xl font-bold text-foreground">I have a bad feeling about this...</h2>
         <p className="text-gray-500">The character you are looking for does not exist in our archives or the Force is weak right now.</p>
         <Link href="/" className="inline-block px-6 py-3 bg-blue-500 text-black font-bold uppercase tracking-widest rounded hover:bg-blue-400 transition-colors">
           Return to List
