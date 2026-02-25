@@ -15,9 +15,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="min-h-screen bg-background text-foreground antialiased transition-colors duration-300">
-        <header className="border-b border-yellow-500/30 py-6 mb-8 bg-background/50 backdrop-blur-sm sticky top-0 z-10">
+        <header className="border-b border-blue-500/30 py-6 mb-8 bg-background/50 backdrop-blur-sm sticky top-0 z-10">
           <div className="container mx-auto px-4">
-            <h1 className="text-3xl font-bold tracking-tighter text-yellow-400">
+            <h1 className="text-3xl font-bold tracking-tighter text-blue-400">
               STAR WARS CHARACTERS
             </h1>
           </div>
@@ -25,7 +25,7 @@ export default function RootLayout({
         <main className="container mx-auto px-4 pb-12">
           {children}
         </main>
-        <footer className="border-t border-yellow-500/10 py-8 mt-auto bg-background text-center text-sm text-gray-500">
+        <footer className="border-t border-blue-500/10 py-8 mt-auto bg-background text-center text-sm text-gray-500">
           <div className="container mx-auto px-4 flex flex-col items-center gap-6">
             <ThemeToggle />
             <div>Built with Next.js & SWAPI</div>

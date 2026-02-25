@@ -15,7 +15,7 @@ export default async function CharactersPage({ searchParams }: PageProps) {
   return (
     <div className="space-y-8">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <h2 className="text-2xl font-bold uppercase tracking-widest text-yellow-500">
+        <h2 className="text-2xl font-bold uppercase tracking-widest text-blue-500">
           Characters
         </h2>
         
@@ -25,13 +25,13 @@ export default async function CharactersPage({ searchParams }: PageProps) {
             name="search"
             defaultValue={search}
             placeholder="Search characters..."
-            className="w-full bg-gray-900/50 border border-yellow-500/20 rounded-md py-2 pl-10 pr-4 focus:outline-none focus:border-yellow-500 transition-colors placeholder:text-gray-600"
+            className="w-full bg-gray-400/50 border border-blue-500/20 rounded-md py-2 pl-10 pr-4 focus:outline-none focus:border-blue-500 placeholder:text-foreground/50 transition-colors"
           />
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 size-4" />
         </form>
       </div>
 
-      <Suspense key={`${page}-${search}`} fallback={<div className="text-yellow-500 animate-pulse">Loading characters...</div>}>
+      <Suspense key={`${page}-${search}`} fallback={<div className="text-blue-500 animate-pulse">Loading characters...</div>}>
         <CharacterList page={page} search={search} />
       </Suspense>
     </div>
@@ -56,22 +56,22 @@ async function CharacterList({ page, search }: { page: number; search: string })
               <Link 
                 key={id}
                 href={`/people/${id}`}
-                className="group p-6 bg-gray-900/20 border border-gray-800 rounded-lg hover:border-yellow-500/50 transition-all hover:bg-yellow-500/5 flex flex-col justify-between"
+                className="group p-6 bg-gray-900/20 border border-gray-800 rounded-lg hover:border-blue-500/50 transition-all hover:bg-blue-500/5 flex flex-col justify-between"
               >
                 <div>
-                  <h3 className="text-xl font-semibold mb-2 group-hover:text-yellow-400 transition-colors">
+                  <h3 className="text-xl font-semibold mb-2 group-hover:text-blue-400 transition-colors">
                     {person.name}
                   </h3>
                   <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="px-2 py-0.5 text-xs rounded bg-gray-800 text-gray-400 uppercase tracking-tighter">
+                    <span className="px-2 py-0.5 text-xs rounded border uppercase">
                       Birth: {person.birth_year}
                     </span>
-                    <span className="px-2 py-0.5 text-xs rounded bg-gray-800 text-gray-400 uppercase tracking-tighter">
+                    <span className="px-2 py-0.5 text-xs rounded border uppercase">
                       Gender: {person.gender}
                     </span>
                   </div>
                 </div>
-                <div className="text-yellow-600 text-sm font-medium flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                <div className="text-blue-600 text-sm font-medium flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                   View Profile <ChevronRight className="size-4" />
                 </div>
               </Link>
@@ -84,18 +84,18 @@ async function CharacterList({ page, search }: { page: number; search: string })
           <div className="flex justify-center items-center gap-4 py-8">
             <Link
               href={{ query: { page: page - 1, search: search || undefined } }}
-              className={`p-2 rounded-full border border-gray-800 hover:border-yellow-500 transition-colors ${page <= 1 ? "pointer-events-none opacity-20" : ""}`}
+              className={`p-2 rounded-full border border-gray-800 hover:border-blue-500 transition-colors ${page <= 1 ? "pointer-events-none opacity-20" : ""}`}
             >
               <ChevronLeft />
             </Link>
             
             <div className="text-sm font-medium text-gray-500">
-              Page <span className="text-yellow-500">{page}</span> of {totalPages}
+              Page <span className="text-blue-500">{page}</span> of {totalPages}
             </div>
 
             <Link
               href={{ query: { page: page + 1, search: search || undefined } }}
-              className={`p-2 rounded-full border border-gray-800 hover:border-yellow-500 transition-colors ${page >= totalPages ? "pointer-events-none opacity-20" : ""}`}
+              className={`p-2 rounded-full border border-gray-800 hover:border-blue-500 transition-colors ${page >= totalPages ? "pointer-events-none opacity-20" : ""}`}
             >
               <ChevronRight />
             </Link>

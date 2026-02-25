@@ -28,7 +28,7 @@ export function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-gray-800 hover:border-yellow-500 transition-colors text-gray-400 hover:text-yellow-500"
+      className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-gray-800 hover:border-blue-500 transition-colors text-gray-400 hover:text-blue-500"
       aria-label="Toggle theme"
     >
       {theme === "dark" ? (
