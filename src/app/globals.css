@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #000000;
+  --foreground: #ffffff;
+  --card-bg: rgba(17, 24, 39, 0.2);
+  --border-color: rgba(31, 41, 55, 1);
+}
+
+:root.light {
+  --background: #ffffff;
+  --foreground: #111827;
+  --card-bg: rgba(243, 244, 246, 0.8);
+  --border-color: rgba(229, 231, 235, 1);
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
